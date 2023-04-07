@@ -1,0 +1,18 @@
+.container {
+	display: flex;
+	align-items: center;
+}
+
+.image {
+	flex: 1;
+	margin-right: 20px;
+}
+
+.image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.description {
+	flex: 1;
+}
