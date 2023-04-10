@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\carController;
 use App\Http\Controllers\messageController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;  
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +19,24 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('car');
+});
+
+// admin authentication
+Route::middleware(['auth', 'role:admin'])->group(function() {
+    // example route
+    // Route::get('admin-auth', function () {
+    //     return view('adminAuth');
+    // });
+});
+
+// seller authentication
+Route::middleware(['auth', 'role:seller'])->group(function() {
+    // example route
+    // Route::get('seller-auth', function () {
+    //     return view('sellerAuth');
+    // });
 });
 
 Route::get('car',[carController::class,'showAllCar']);
@@ -30,3 +50,8 @@ Route::get('car/honda/{id}',[carController::class,'showDetailCar']);
 Route::get('car/{brand}/{id}/contact',[messageController::class,'showContactForm']);
 Route::post("contactMessage",[messageController::class,'contactMessage']);
 
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('logout', [LoginController::class,'logout']);
