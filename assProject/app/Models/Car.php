@@ -17,4 +17,22 @@ class Car extends Model
     public function getMessage(){
         return $this->hasMany(Message::class);
     }
+
+    use HasFactory;
+
+    protected $table = 'cars';
+
+    protected $fillable = [
+        'brand',
+        'model',
+        'variant',
+        'color',
+        'plateNumber',
+        'yearOfManufacture',
+        'engineCC',
+        'price',
+        'condition',
+        'user_id',
+        'url'
+    ];
 }

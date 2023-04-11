@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;  
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\sellerPortalController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,15 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
     // Route::get('admin-auth', function () {
     //     return view('adminAuth');
     // });
+    Route::get('/seller/dashboard', [sellerPortalController::class, 'showListings'])->name('seller.dashboard');
+Route::delete('/seller/car/{car}', [sellerPortalController::class, 'destroy'])->name('seller.destroy');
+// Show the create car form
+Route::get('/create', [sellerPortalController::class, 'create'])->name('seller.create');
+
+// Save the created car
+Route::post('/seller/cars', [sellerPortalController::class, 'store'])->name('seller.store');
+Route::post('/seller/update/{id}', [sellerPortalController::class, 'update'])->name('seller.update');
+Route::post('/seller/edit/{id}', [sellerPortalController::class, 'edit'])->name('seller.edit');
 });
 
 // seller authentication
@@ -37,6 +47,15 @@ Route::middleware(['auth', 'role:seller'])->group(function() {
     // Route::get('seller-auth', function () {
     //     return view('sellerAuth');
     // });
+    Route::get('/seller/dashboard', [sellerPortalController::class, 'showListings'])->name('seller.dashboard');
+Route::delete('/seller/car/{car}', [sellerPortalController::class, 'destroy'])->name('seller.destroy');
+// Show the create car form
+Route::get('/create', [sellerPortalController::class, 'create'])->name('seller.create');
+
+// Save the created car
+Route::post('/seller/cars', [sellerPortalController::class, 'store'])->name('seller.store');
+Route::post('/seller/update/{id}', [sellerPortalController::class, 'update'])->name('seller.update');
+Route::post('/seller/edit/{id}', [sellerPortalController::class, 'edit'])->name('seller.edit');
 });
 
 Route::get('car',[carController::class,'showAllCar']);
@@ -55,3 +74,8 @@ Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('logout', [LoginController::class,'logout']);
+
+
+
+
+
