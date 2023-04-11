@@ -73,3 +73,4 @@
     <!-- End signup modal -->
 </section>
 @include('components.footer')
+

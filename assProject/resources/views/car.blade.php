@@ -45,3 +45,9 @@
     </div>
 </section>
 @include('components.footer')
+
+@if(session("checkLogin"))
+<script>
+	alert('{{session("checkLogin")}}');
+</script>
+@endif

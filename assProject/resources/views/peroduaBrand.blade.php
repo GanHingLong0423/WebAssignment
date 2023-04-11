@@ -4,6 +4,9 @@
 <head>
 	<title>Perodua</title>
 </head>
+<section>
+    @include('components.header')
+</section>
 <section style="background-color: #eee;">
     <div class="text-center container py-5">
         <h1 class="mt-4 mb-5"><strong>Perodua</strong></h1>
@@ -42,3 +45,9 @@
     </div>
 </section>
 @include('components.footer')
+
+@if(session("checkLogin"))
+<script>
+	alert('{{session("checkLogin")}}');
+</script>
+@endif

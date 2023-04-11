@@ -14,7 +14,7 @@ class sellerPortalController extends Controller
     public function showListings()
     {
         $user_id = auth()->user()->id;
-        $cars = Car::where('user_id', $user_id)->get();
+        $cars = Car::where('user_id',$user_id)->get();
 
         return view('sellerPortal', ['cars' => $cars]);
     }
