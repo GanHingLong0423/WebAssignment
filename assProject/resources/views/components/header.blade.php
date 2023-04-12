@@ -30,6 +30,9 @@
                         <a class="nav-link" href='{{ url("home") }}'>{{ __('Home') }}</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
+                        <a class="nav-link" href='{{ url("car") }}'>{{ __('All') }}</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 10px;">
                         <a class="nav-link" href='{{ url("car/proton") }}'>{{ __('Proton') }}</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
@@ -64,6 +67,9 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ url('profile',['id' => Auth::user()->id]) }}" >
+                                {{ __('Profile') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -72,6 +78,7 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
+                            
                         </div>
                     </li>
                     @endguest

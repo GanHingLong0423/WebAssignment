@@ -51,6 +51,9 @@
             </div>
             @endif
             @endforeach
+            <div class="text-center mb-4">
+                <a href="car/proton" class="dark-link">Load more</a>
+            </div>
             <div class="mb-4" style="font-size:20px; background-color: #F98B88; padding:10px" href="{{ url('/car/proton') }}">
             <a class="navbar-brand" href="{{ url('/car/perodua') }}">
                 {{ __('Perodua') }}
@@ -87,6 +90,9 @@
             </div>
             @endif
             @endforeach
+            <div class="text-center mb-4">
+                <a href="car/perodua" class="dark-link">Load more</a>
+            </div>
             <div class="mb-4" style="font-size:20px; background-color: #F98B88; padding:10px" href="{{ url('/car/proton') }}">
             <a class="navbar-brand" href="{{ url('/car/honda') }}">
                 {{ __('Honda') }}
@@ -123,6 +129,9 @@
             </div>
             @endif
             @endforeach
+            <div class="text-center mb-4">
+                <a href="car/honda" class="dark-link">Load more</a>
+            </div>
         </div>
     </div>
 </section>
