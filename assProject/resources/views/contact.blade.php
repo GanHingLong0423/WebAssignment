@@ -96,14 +96,12 @@
 			</form>
 		</div>
 	</div>
-
 </div>
 
-@if(session("submitMessage"))
-<script>
-	alert('{{session("submitMessage")}}');
-</script>
-@endif
+
+
+
+
 
 
 <style>

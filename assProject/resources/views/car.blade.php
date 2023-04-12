@@ -9,7 +9,7 @@
 </section>
 <section style="background-color: #eee;">
     <div class="text-center container py-5">
-        <h1 class="mt-4 mb-5"><strong>Car List</strong></h1>
+        <h1 class="mt-4 mb-5"><strong>All Cars</strong></h1>
 
         <div class="row">
             @foreach($cars as $car)
@@ -50,5 +50,11 @@
 @if(session("checkLogin"))
 <script>
 	alert('{{session("checkLogin")}}');
+</script>
+@endif
+
+@if(session("submitMessage"))
+<script>
+	alert('{{session("submitMessage")}}');
 </script>
 @endif

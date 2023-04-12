@@ -31,6 +31,6 @@ class messageController extends Controller
             
         ]);
 
-        return back()->with('submitMessage',"You Have Successfully Submiited Your Message."); 
+        return redirect('car')->with('submitMessage',"You Have Successfully Submiited Your Message."); 
     }
 }
