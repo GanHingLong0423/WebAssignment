@@ -6,6 +6,7 @@
     <table>
         <thead>
             <tr>
+                <th>Image</th>
                 <th>Brand</th>
                 <th>Model</th>
                 <th>Variant</th>
@@ -18,6 +19,7 @@
         </thead>
         <tbody>
             <tr>
+            <td><img src="{{ asset($car->file_path) }}" alt="{{ $car->filename }}" width=100 height=100></td>
                 <td>{{ $car->brand }}</td>
                 <td>{{ $car->model }}</td>
                 <td>{{ $car->variant }}</td>
