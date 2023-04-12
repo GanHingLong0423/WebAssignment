@@ -42,7 +42,7 @@
             <div class="mb-4"><a href='{{"/seller/dashboard"}}'>
               <button type="button" class="btn btn-info">Seller Portal</button>
             </a></div>
-            <div><a href='{{"/message/2"}}'>
+            <div><a href="{{url('message',['id' => $user['id']])}}">
               <button type="button" class="btn btn-info">Messages</button>
             </a></div>
           @endcan

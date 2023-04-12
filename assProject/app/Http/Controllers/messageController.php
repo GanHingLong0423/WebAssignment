@@ -28,19 +28,20 @@ class MessageController extends Controller
             'email'=>$request->email,
             'comment'=>$request->comment,
             'car_id'=>$request->carid,
-            
+            'seller_id'=>$request->sellerid,
         ]);
 
         return redirect('car')->with('submitMessage',"You Have Successfully Submiited Your Message."); 
     }
-    // Find message using car_id
-    public function showMessage($id){
+    // Find message using user_id to find the correct car, then use car_id to search message
+    public function showMessage($user_id){
         
-        $cars = DB::table('cars')->
-            where('user_id','=',$id)
+        $messages = DB::table('messages')->
+            where('seller_id','=',$user_id)
             ->get();
-        $message = DB::table('messages');
-        return view('messages',['message'=>$message]);
+
+        
+        return view('messages',['messages'=>$messages]);
 
     }
 }

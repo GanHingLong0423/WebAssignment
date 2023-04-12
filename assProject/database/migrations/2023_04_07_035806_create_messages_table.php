@@ -20,6 +20,7 @@ class CreateMessagesTable extends Migration
             $table->string('email');
             $table->string('comment');
             $table->string('car_id');
+            $table->string('seller_id');
             $table->timestamps();
         });
     }

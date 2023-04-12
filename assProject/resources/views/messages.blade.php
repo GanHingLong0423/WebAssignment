@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <head>
-	<title>{{$message['name']}}</title>
+	<title>Messages</title>
 </head>
 <section>
     @include('components.header')
@@ -12,31 +12,32 @@
 <div class="container">
   <div class="card">
     <div class="card-body">
-      <h1 class="card-title"><strong>Profile</strong></h1>
+      <h1 class="card-title"><strong>Messages</strong></h1>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <h3 class="box-title mt-5">General Info</h3>
           <div class="table-responsive">
+            @foreach($messages as $message)
             <table class="table table-striped table-product">
               <tbody>
                 <tr>
                   <td width="390">Name</td>
-                  <td>{{$message['name']}}</td>
+                  <td>{{$message->name}}</td>
+                </tr>
+                <tr>
+                  <td>Contact Number</td>
+                  <td>{{$message->contactNumber}}</td>
                 </tr>
                 <tr>
                   <td>Email</td>
-                  <td>{{$message['email']}}</td>
+                  <td>{{$message->email}}</td>
                 </tr>
                 <tr>
-                  <td>Address</td>
-                  <td>{{$message['contactNumber']}}</td>
-                </tr>
-                <tr>
-                  <td>Phone Number</td>
-                  <td>{{$message['comment']}}</td>
+                  <td>Comment</td>
+                  <td>{{$message->comment}}</td>
                 </tr>
               </tbody>
             </table>
+            @endforeach
       </div>
     </div>
   </div>
