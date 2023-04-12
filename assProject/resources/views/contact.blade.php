@@ -17,6 +17,7 @@
 			<form class="contact-form" method="POST" action='{{url("contactMessage")}}'>
 				@csrf
 				<input type="hidden" name="carid" value="{{$car['id']}}">
+				<input type="hidden" name="sellerid" value="{{$car['user_id']}}">
 				<div class="form-group">
 					<label class="control-label col-sm-10" for="fname"><strong>Name :</strong></label>
 					<div class="col-sm-10">

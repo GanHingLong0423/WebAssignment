@@ -15,6 +15,7 @@ class Message extends Model
         'contactNumber',
         'comment',
         'car_id',
+        'seller_id',
     ];
     public function getCar(){
         return $this->belongsTo(Car::class);
