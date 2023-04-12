@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SellerPortalController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,7 @@ Route::get('/', function () {
     return redirect('car');
 });
 Route::get('/home', [HomeController::class, 'index']);
+Route::get('profile/{id}', [UserController::class, 'showDetailUser']);
 // admin authentication
 Route::middleware(['auth', 'role:admin'])->group(function () {
     // example route
@@ -52,6 +54,7 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
     Route::get('car/{brand}/{id}/contact', [messageController::class, 'showContactForm']);
     Route::post("contactMessage", [messageController::class, 'contactMessage']);
 });
+// user authentication
 Route::middleware(['auth', 'role:user'])->group(function () {
     // example route
     // Route::get('seller-auth', function () {

@@ -23,7 +23,7 @@ class UserController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
       
             // Authentication passed...
-            return redirect('car');
+            return redirect('home');
         }else{
             return "not passed";
         }
@@ -44,5 +44,10 @@ class UserController extends Controller
             User::create($data);
             return redirect('login');
         }
+    }
+
+    public function showDetailUser($id){
+        $user=User::find($id);
+        return view('profile',['user'=>$user]);
     }
 }
