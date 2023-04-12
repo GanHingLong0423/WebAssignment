@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Car;
 use Illuminate\Http\Request;
 use App\Models\Message;
-class messageController extends Controller
+class MessageController extends Controller
 {
     
     
