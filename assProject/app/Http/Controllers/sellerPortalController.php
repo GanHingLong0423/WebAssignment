@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 
 
-class sellerPortalController extends Controller
+class SellerPortalController extends Controller
 {
     public function showListings()
     {

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
-class carController extends Controller
+class CarController extends Controller
 {
     //
     public function showCar($name){
