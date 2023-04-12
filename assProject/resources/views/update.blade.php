@@ -1,9 +1,14 @@
-<form action="{{ route('seller.update', $car->id) }}" method="POST">
+<form action="{{ route('seller.update', $car->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST')
     <div>
-        <label for="brand">Brand:</label>
-        <input type="text" name="brand" value="{{ $car->brand }}">
+    <label for="brand">Brand:</label>
+    <select name="brand" required>
+        <option value="">-- Select brand --</option>
+        <option value="Proton">Proton</option>
+        <option value="Perodua">Perodua</option>
+        <option value="Honda">Honda</option>
+    </select>
     </div>
     <div>
         <label for="model">Model:</label>
@@ -18,20 +23,28 @@
         <input type="text" name="color" value="{{ $car->color }}">
     </div>
     <div>
-        <label for="yearOfManufacture">Year of Manufacture:</label>
-        <input type="text" name="yearOfManufacture" value="{{ $car->yearOfManufacture }}">
+    <label for="yearOfManufacture">Year of Manufacture:</label>
+    <select name="yearOfManufacture" required>
+        @for ($year = 2023; $year >= 1990; $year--)
+            <option value="{{ $year }}">{{ $year }}</option>
+        @endfor
+    </select>
     </div>
     <div>
-        <label for="engineCC">Engine CC:</label>
-        <input type="text" name="engineCC" value="{{ $car->engineCC }}">
+    <label for="engineCC">Engine CC:</label>
+    <input type="text" name="engineCC" pattern="\d+(\.\d{1,2})?" min="0.1" max="99.9" placeholder="Enter engine CC between 0.1 to 99.9" required>
     </div>
     <div>
-        <label for="price">Price:</label>
-        <input type="text" name="price" value="{{ $car->price }}">
+    <label for="price">Price:</label>
+    <input type="number" name="price" min="0" step="0.01" placeholder="Enter price in RM" required>
     </div>
     <div>
-        <label for="condition">Condition:</label>
-        <input type="text" name="condition" value="{{ $car->condition }}">
+    <label for="condition">Condition:</label>
+    <input type="text" name="condition" required placeholder="Please describe the condition of the car">
+    </div>
+    <div>
+    <label for="image">Image:</label>
+    <input type="file" name="image" required>
     </div>
     <div>
         <button type="submit" class="btn btn-primary">Update</button>
