@@ -51,6 +51,11 @@
               <button type="button" class="btn btn-info">Seller Portal</button>
             </a>
           @endcan
+          @can('isUser')
+            <a href="{{url('changeRole',['id' => $user['id']])}}">
+              <button type="button" class="btn btn-info">Register as Seller</button>
+            </a>
+          @endcan
         </div>
       </div>
     </div>

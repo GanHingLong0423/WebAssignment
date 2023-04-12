@@ -28,6 +28,8 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index']);
 // Get user info using user id
 Route::get('profile/{id}', [UserController::class, 'showDetailUser']);
+// Update user role to seller
+Route::get('changeRole/{id}', [UserController::class, 'changeRoleToSeller']);
 // Get message using car id
 Route::get('message/{id}', [MessageController::class, 'showMessage']);
 // admin authentication
