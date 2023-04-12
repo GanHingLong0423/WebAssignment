@@ -17,8 +17,8 @@
             <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
-                    <!-- <img src="{{asset('storage/'.$car['url'])}}" class="w-100" />   -->
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" class="w-100" />
+                    <img src="{{ asset($car['file_path']) }}" class="w-100" style="height:230px" />
+                    <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" class="w-100" /> -->
                         <a href="#!">
                             <div class="mask">
                             </div>

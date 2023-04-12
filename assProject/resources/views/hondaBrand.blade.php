@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <head>
-	<title>Honda Hi</title>
+	<title>Honda</title>
 </head>
 <section>
     @include('components.header')
@@ -17,7 +17,8 @@
             <div class="col-lg-4 col-md-12 mb-4">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light" data-mdb-ripple-color="light">
-                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" class="w-100" />
+                        <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/belt.webp" class="w-100" /> -->
+                        <img src="{{ asset($car['file_path']) }}" class="w-100" style="height:230px" />
                         <a href="#!">
                             <div class="mask">
                             </div>

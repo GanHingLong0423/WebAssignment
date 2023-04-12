@@ -3,13 +3,18 @@
 <head>
 	<title>{{$car['brand']." ".$car['model']}}</title>
 </head>
+<section>
+    @include('components.header')
+</section>
+<br>
+<br>
 <div class="container">
   <div class="card">
     <div class="card-body">
       <h1 class="card-title"><strong>{{$car['brand']." ".$car['model']}}</strong></h1>
       <div class="row">
         <div class="col-lg-5 col-md-5 col-sm-6">
-          <div class="white-box text-center"><img src="https://www.bootdey.com/image/430x300/00CED1/000000" class="img-responsive"></div>
+          <div class="white-box text-center"><img src="{{ asset($car['file_path']) }}" class="w-100" style="height:250px" /></div>
         </div>
         <div class="col-lg-7 col-md-7 col-sm-6">
           

@@ -85,3 +85,6 @@ Route::get('/create', [sellerPortalController::class, 'create'])->name('seller.c
 Route::post('/seller/cars', [sellerPortalController::class, 'store'])->name('seller.store');
 Route::post('/seller/update/{id}', [sellerPortalController::class, 'update'])->name('seller.update');
 Route::post('/seller/edit/{id}', [sellerPortalController::class, 'edit'])->name('seller.edit');
+
+
+

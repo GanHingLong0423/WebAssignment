@@ -25,7 +25,8 @@ class CreateCarsTable extends Migration
             $table->string('price');
             $table->string('condition');
             $table->string('user_id');
-            $table->string("url");
+            $table->string('filename');
+            $table->string('file_path');
             $table->timestamps();
         });
     }
