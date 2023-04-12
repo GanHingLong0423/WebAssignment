@@ -7,6 +7,7 @@
 
 <section style="background-color: #eee;">
     <div class="text-center container py-5">
+        <h1 class="mt-4 mb-5"><strong>Update Car Details</strong></h1>
         <form action="{{ route('seller.update', $car->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
@@ -55,6 +56,7 @@
                 <label for="image">Image:</label>
                 <input type="file" name="image" required>
             </div>
+            <br>
             <div>
                 <button style= "font-size: 20px;" type="submit" class="btn btn-primary">Update</button>
             </div>
@@ -70,9 +72,10 @@
     label {
         width: 20%;
         margin: 10px;
+        text-align: right;
     }
     
-    input {
-        width: 20%;
+    input, select {
+        width: 30%;
     }
 </style>

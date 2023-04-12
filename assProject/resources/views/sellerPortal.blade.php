@@ -11,6 +11,7 @@
         <table>
             <thead>
                 <tr>
+                    <th></th>
                     <th>Brand</th>
                     <th>Model</th>
                     <th>Variant</th>
