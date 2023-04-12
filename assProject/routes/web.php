@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SellerPortalController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () {
     // return view('welcome');
     return redirect('car');
 });
-
+Route::get('/home', [HomeController::class, 'index']);
 // admin authentication
 Route::middleware(['auth', 'role:admin'])->group(function () {
     // example route

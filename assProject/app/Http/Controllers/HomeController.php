@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\Car;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::check()) {
+            // User is authenticated, execute logic
+            // ...
+        } else {
+            Session::flash('checkLogin',"Please login to proceed");
+        }
+        $cars=Car::all();
+        return view("home",['cars'=>$cars]);
     }
 }
