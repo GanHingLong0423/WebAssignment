@@ -18,10 +18,6 @@ class Car extends Model
         return $this->hasMany(Message::class);
     }
 
-    use HasFactory;
-
-    protected $table = 'cars';
-
     protected $fillable = [
         'brand',
         'model',
@@ -33,6 +29,7 @@ class Car extends Model
         'price',
         'condition',
         'user_id',
-        'url'
+        'filename',
+        'file_path'
     ];
 }
