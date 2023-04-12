@@ -37,8 +37,8 @@ public function store(Request $request)
         'engineCC' => 'required|string',
         'price' => 'required|string',
         'condition' => 'required|string',
-        
-        'url' => 'required|string',
+        'filename' => 'required|string',
+        'file_path' => 'required|string',
     ]);
 
     $car = new Car();
@@ -52,7 +52,8 @@ public function store(Request $request)
     $car->price = $request->input('price');
     $car->condition = $request->input('condition');
     $car->user_id = auth()->user()->id;
-    $car->url = $request->input('url');
+    $car->filename = $request->input('filename');
+    $car->file_path = $request->input('file_path');
     $car->save();
 
     return redirect()->route('seller.dashboard');
@@ -60,7 +61,7 @@ public function store(Request $request)
 
 public function create()
 {
-    return view('create')->with('success', 'Car listed successfully.');;
+    return view('create')->with('success', 'Car listed successfully.');
 }
 
 public function edit($id)
