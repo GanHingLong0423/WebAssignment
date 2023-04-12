@@ -50,4 +50,11 @@ class UserController extends Controller
         $user=User::find($id);
         return view('profile',['user'=>$user]);
     }
+
+    public function changeRoleToSeller($id){
+        $user=User::find($id);
+        $user->role = 'seller';
+        $user->save();
+        return view('profile',['user'=>$user]);
+    }
 }
