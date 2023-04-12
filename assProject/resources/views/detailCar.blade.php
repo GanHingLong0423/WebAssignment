@@ -3,9 +3,9 @@
 <head>
 	<title>{{$car['brand']." ".$car['model']}}</title>
 </head>
-<section>
+<div>
     @include('components.header')
-</section>
+</div>
 <br>
 <br>
 <div class="container">
