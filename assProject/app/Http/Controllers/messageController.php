@@ -33,4 +33,14 @@ class messageController extends Controller
 
         return redirect('car')->with('submitMessage',"You Have Successfully Submiited Your Message."); 
     }
+    // Find message using car_id
+    public function showMessage($id){
+        
+        $cars = DB::table('cars')->
+            where('user_id','=',$id)
+            ->get();
+        $message = DB::table('messages');
+        return view('messages',['message'=>$message]);
+
+    }
 }

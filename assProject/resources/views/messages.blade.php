@@ -1,216 +1,82 @@
-<!doctype html>
-                        <html>
-                            <head>
-                                <meta charset='utf-8'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>Snippet - GoSNippets</title>
-                                <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
-                                <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
-                                <style>@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap);
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
-body {
-    font-family: "Roboto", sans-serif;
-    background: #EFF1F3;
-    min-height: 100vh;
-    position: relative;
-}
-
-.section-50 {
-    padding: 50px 0;
-}
-
-.m-b-50 {
-    margin-bottom: 50px;
-}
-
-.dark-link {
-    color: #333;
-}
-
-.heading-line {
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.heading-line:after {
-    content: "";
-    height: 4px;
-    width: 75px;
-    background-color: #29B6F6;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.notification-ui_dd-content {
-    margin-bottom: 30px;
-}
-
-.notification-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 20px;
-    margin-bottom: 7px;
-    background: #fff;
-    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
-}
-
-.notification-list--unread {
-    border-left: 2px solid #29B6F6;
-}
-
-.notification-list .notification-list_content {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.notification-list .notification-list_content .notification-list_img img {
-    height: 48px;
-    width: 48px;
-    border-radius: 50px;
-    margin-right: 20px;
-}
-
-.notification-list .notification-list_content .notification-list_detail p {
-    margin-bottom: 5px;
-    line-height: 1.2;
-}
-
-.notification-list .notification-list_feature-img img {
-    height: 48px;
-    width: 48px;
-    border-radius: 5px;
-    margin-left: 20px;
-}</style>
-                                <script type='text/javascript' src=''></script>
-                                <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
-                            </head>
-                            <body oncontextmenu='return false' class='snippet-body'>
-                            <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Signup</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<section class="section-50">
-    <div class="container">
-        <h3 class="m-b-50 heading-line">Notifications <i class="fa fa-bell text-muted"></i></h3>
-
-        <div class="notification-ui_dd-content">
-            <div class="notification-list notification-list--unread">
-                <div class="notification-list_content">
-                    <div class="notification-list_img">
-                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                    </div>
-                    <div class="notification-list_detail">
-                        <p><b>John Doe</b> reacted to your post</p>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
-                        <p class="text-muted"><small>10 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="notification-list_feature-img">
-                    <img src="https://i.imgur.com/AbZqFnR.jpg" alt="Feature image">
-                </div>
-            </div>
-            <div class="notification-list notification-list--unread">
-                <div class="notification-list_content">
-                    <div class="notification-list_img">
-                        <img src="https://i.imgur.com/w4Mp4ny.jpg" alt="user">
-                    </div>
-                    <div class="notification-list_detail">
-                        <p><b>Richard Miles</b> liked your post</p>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
-                        <p class="text-muted"><small>10 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="notification-list_feature-img">
-                    <img src="https://i.imgur.com/AbZqFnR.jpg" alt="Feature image">
-                </div>
-            </div>
-            <div class="notification-list">
-                <div class="notification-list_content">
-                    <div class="notification-list_img">
-                        <img src="https://i.imgur.com/ltXdE4K.jpg" alt="user">
-                    </div>
-                    <div class="notification-list_detail">
-                        <p><b>Brian Cumin</b> reacted to your post</p>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
-                        <p class="text-muted"><small>10 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="notification-list_feature-img">
-                    <img src="https://i.imgur.com/bpBpAlH.jpg" alt="Feature image">
-                </div>
-            </div>
-            <div class="notification-list">
-                <div class="notification-list_content">
-                    <div class="notification-list_img">
-                        <img src="https://i.imgur.com/CtAQDCP.jpg" alt="user">
-                    </div>
-                    <div class="notification-list_detail">
-                        <p><b>Lance Bogrol</b> reacted to your post</p>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
-                        <p class="text-muted"><small>10 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="notification-list_feature-img">
-                    <img src="https://i.imgur.com/iIhftMJ.jpg" alt="Feature image">
-                </div>
-            </div>
-            <div class="notification-list">
-                <div class="notification-list_content">
-                    <div class="notification-list_img">
-                        <img src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
-                    </div>
-                    <div class="notification-list_detail">
-                        <p><b>Parsley Montana</b> reacted to your post</p>
-                        <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde, dolorem.</p>
-                        <p class="text-muted"><small>10 mins ago</small></p>
-                    </div>
-                </div>
-                <div class="notification-list_feature-img">
-                    <img src="https://i.imgur.com/bpBpAlH.jpg" alt="Feature image">
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center">
-            <a href="#!" class="dark-link">Load more activity</a>
-        </div>
-
-    </div>
+<head>
+	<title>{{$message['name']}}</title>
+</head>
+<section>
+    @include('components.header')
 </section>
-                            <script type='text/javascript'></script>
-                            </body>
-                        </html>
+<br>
+<br>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h1 class="card-title"><strong>Profile</strong></h1>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <h3 class="box-title mt-5">General Info</h3>
+          <div class="table-responsive">
+            <table class="table table-striped table-product">
+              <tbody>
+                <tr>
+                  <td width="390">Name</td>
+                  <td>{{$message['name']}}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td>{{$message['email']}}</td>
+                </tr>
+                <tr>
+                  <td>Address</td>
+                  <td>{{$message['contactNumber']}}</td>
+                </tr>
+                <tr>
+                  <td>Phone Number</td>
+                  <td>{{$message['comment']}}</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>
+@include('components.footer')
+
+<style>
+  body {
+    background-color: #edf1f5;
+    margin-top: 20px;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid transparent;
+    border-radius: 0;
+  }
+
+  .card .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #8898aa;
+  }
+
+  .table-product.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f3f8fa !important
+  }
+
+  .table-product td {
+    border-top: 0px solid #dee2e6 !important;
+    color: #728299 !important;
+  }
+</style>

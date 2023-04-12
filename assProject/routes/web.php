@@ -26,7 +26,10 @@ Route::get('/', function () {
     return redirect('car');
 });
 Route::get('/home', [HomeController::class, 'index']);
+// Get user info using user id
 Route::get('profile/{id}', [UserController::class, 'showDetailUser']);
+// Get message using car id
+Route::get('message/{id}', [messageController::class, 'showMessage']);
 // admin authentication
 Route::middleware(['auth', 'role:admin'])->group(function () {
     // example route

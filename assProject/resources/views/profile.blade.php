@@ -39,12 +39,15 @@
             </table>
           </div>
           @can('isSeller')
-            <a href='{{"seller/dashboard"}}'>
+            <div class="mb-4"><a href='{{"/seller/dashboard"}}'>
               <button type="button" class="btn btn-info">Seller Portal</button>
-            </a>
+            </a></div>
+            <div><a href='{{"/message/2"}}'>
+              <button type="button" class="btn btn-info">Messages</button>
+            </a></div>
           @endcan
           @can('isAdmin')
-            <a href='{{"seller/dashboard"}}'>
+            <a href='{{"/seller/dashboard"}}'>
               <button type="button" class="btn btn-info">Seller Portal</button>
             </a>
           @endcan
