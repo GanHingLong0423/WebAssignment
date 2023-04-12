@@ -30,6 +30,9 @@
                         <a class="nav-link" href='{{ url("home") }}'>{{ __('Home') }}</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
+                        <a class="nav-link" href='{{ url("car") }}'>{{ __('All') }}</a>
+                    </li>
+                    <li class="nav-item" style="margin-left: 10px;">
                         <a class="nav-link" href='{{ url("car/proton") }}'>{{ __('Proton') }}</a>
                     </li>
                     <li class="nav-item" style="margin-left: 10px;">
