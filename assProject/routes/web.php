@@ -32,39 +32,24 @@ Route::get('profile/{id}', [UserController::class, 'showDetailUser']);
 Route::get('changeRole/{id}', [UserController::class, 'changeRoleToSeller']);
 // Get message using car id
 Route::get('message/{id}', [MessageController::class, 'showMessage']);
-// admin authentication
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    // example route
-    // Route::get('admin-auth', function () {
-    //     return view('adminAuth');
-    // });
-    Route::get('car/proton/{id}', [CarController::class, 'showDetailCar']);
-    Route::get('car/perodua/{id}', [CarController::class, 'showDetailCar']);
-    Route::get('car/honda/{id}', [CarController::class, 'showDetailCar']);
 
-    Route::get('car/{brand}/{id}/contact', [MessageController::class, 'showContactForm']);
-    Route::post("contactMessage", [MessageController::class, 'contactMessage']);
+// admin authentication
+Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    // routes for admin only
 });
 
 // seller authentication
-Route::middleware(['auth', 'role:seller'])->group(function () {
-    // example route
-    // Route::get('seller-auth', function () {
-    //     return view('sellerAuth');
-    // });
-    Route::get('car/proton/{id}', [CarController::class, 'showDetailCar']);
-    Route::get('car/perodua/{id}', [CarController::class, 'showDetailCar']);
-    Route::get('car/honda/{id}', [CarController::class, 'showDetailCar']);
-
-    Route::get('car/{brand}/{id}/contact', [MessageController::class, 'showContactForm']);
-    Route::post("contactMessage", [MessageController::class, 'contactMessage']);
+Route::group(['middleware' => ['auth', 'role:seller']], function () {
+    // routes for seller only
 });
+
 // user authentication
-Route::middleware(['auth', 'role:user'])->group(function () {
-    // example route
-    // Route::get('seller-auth', function () {
-    //     return view('sellerAuth');
-    // });
+Route::group(['middleware' => ['auth', 'role:user']], function () {
+    // routes for user only
+});
+
+// all user authentication
+Route::group(['middleware' => 'auth'], function () {
     Route::get('car/proton/{id}', [CarController::class, 'showDetailCar']);
     Route::get('car/perodua/{id}', [CarController::class, 'showDetailCar']);
     Route::get('car/honda/{id}', [CarController::class, 'showDetailCar']);
@@ -77,7 +62,6 @@ Route::get('car', [CarController::class, 'showAllCar']);
 Route::get('car/{honda}', [CarController::class, 'showCar']);
 Route::get('car/{perodua}', [CarController::class, 'showCar']);
 Route::get('car/{proton}', [CarController::class, 'showCar']);
-
 
 
 Auth::routes();
@@ -94,6 +78,3 @@ Route::get('/create', [SellerPortalController::class, 'create'])->name('seller.c
 Route::post('/seller/cars', [SellerPortalController::class, 'store'])->name('seller.store');
 Route::post('/seller/update/{id}', [SellerPortalController::class, 'update'])->name('seller.update');
 Route::post('/seller/edit/{id}', [SellerPortalController::class, 'edit'])->name('seller.edit');
-
-
-
