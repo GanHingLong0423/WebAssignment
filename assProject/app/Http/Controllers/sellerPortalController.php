@@ -71,7 +71,7 @@ public function store(Request $request)
 
 public function create()
 {
-    return view('create')->with('success', 'Car listed successfully.');;
+    return view('create')->with('success', 'Car listed successfully.');
 }
 
 public function edit($id)
