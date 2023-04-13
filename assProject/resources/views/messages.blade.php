@@ -39,6 +39,7 @@
             </table>
             @endforeach
       </div>
+      <a href="{{ url("profile/".Auth::user()->id) }}" class="btn btn-default">Go Back</a>
     </div>
   </div>
 </div>

@@ -3,7 +3,7 @@
 <footer class="text-center text-lg-start bg-light text-muted">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-      
+
   </section>
   <!-- Section: Social media -->
 
@@ -19,7 +19,7 @@
             <i class="fas fa-gem me-3"></i>Car Selling Platform
           </h6>
           <p>
-          An online marketplace that connects car sellers with potential buyers, providing a platform for them to buy and sell vehicles.
+            An online marketplace that connects car sellers with potential buyers, providing a platform for them to buy and sell vehicles.
           </p>
         </div>
         <!-- Grid column -->
@@ -49,17 +49,13 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="/home" class="text-reset">Home</a>
           </p>
+          @if(Auth::check())
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href='{{url("profile/".Auth::user()->id)}}' class="text-reset">Profile</a>
           </p>
-          <p>
-            <a href="#!" class="text-reset">Orders</a>
-          </p>
-          <p>
-            <a href="#!" class="text-reset">Help</a>
-          </p>
+          @endif
         </div>
         <!-- Grid column -->
 
@@ -69,7 +65,7 @@
           <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
           <p>Jalan Sungai Long, Bandar Sungai Long, 43000 Kajang, Selangor, Malaysia</p>
           <p>
-        
+
             info@example.com
           </p>
           <p> + 012-3456 788</p>

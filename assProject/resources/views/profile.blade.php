@@ -40,20 +40,20 @@
           </div>
           @can('isSeller')
             <div class="mb-4"><a href='{{"/seller/dashboard"}}'>
-              <button type="button" class="btn btn-info">Seller Portal</button>
+              <button type="button" class="btn btn-info" style="width: 150px;">Seller Portal</button>
             </a></div>
             <div><a href="{{url('message',['id' => $user['id']])}}">
-              <button type="button" class="btn btn-info">Messages</button>
+              <button type="button" class="btn btn-info" style="width: 150px;">Messages</button>
             </a></div>
           @endcan
           @can('isAdmin')
             <a href='{{"/seller/dashboard"}}'>
-              <button type="button" class="btn btn-info">Seller Portal</button>
+              <button type="button" class="btn btn-info" style="width: 150px;">Admin Portal</button>
             </a>
           @endcan
           @can('isUser')
             <a href="{{url('changeRole',['id' => $user['id']])}}">
-              <button type="button" class="btn btn-info">Register as Seller</button>
+              <button type="button" class="btn btn-info" style="width: 150px;">Register as Seller</button>
             </a>
           @endcan
         </div>

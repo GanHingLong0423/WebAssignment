@@ -4,9 +4,11 @@
 <head>
 	<title>Update Car</title>
 </head>
-
+<section>
+    @include('components.header')
+</section>
 <section style="background-color: #eee;">
-    <div class="text-center container py-5">
+    <div class="text-center container py-2">
         <h1 class="mt-4 mb-5"><strong>Update Car Details</strong></h1>
         <form action="{{ route('seller.update', $car->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -33,6 +35,10 @@
                 <input type="text" name="color" value="{{ $car->color }}">
             </div>
             <div>
+                <label for="plateNumber">Plate Number:</label>
+                <input type="text" name="plateNumber" value="{{ $car->plateNumber }}">
+            </div>
+            <div>
                 <label for="yearOfManufacture">Year of Manufacture:</label>
                 <select name="yearOfManufacture" required>
                     @for ($year = 2023; $year >= 1990; $year--)
@@ -54,16 +60,17 @@
             </div>
             <div>
                 <label for="image">Image:</label>
-                <input type="file" name="image" required>
+                <input type="file" name="image" value="{{ old('image') }}" required>
             </div>
             <br>
             <div>
                 <button style= "font-size: 20px;" type="submit" class="btn btn-primary">Update</button>
             </div>
+            <a href="{{ url()->previous() }}" class="btn btn-default">Go Back</a>
         </form>
     </div>
 </section>
-
+@include('components.footer')
 <style>
     div {
         font-size:20px;

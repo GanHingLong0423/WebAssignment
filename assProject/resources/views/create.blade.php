@@ -4,9 +4,11 @@
 <head>
 	<title>New Car Listing</title>
 </head>
-
+<section>
+    @include('components.header')
+</section>
 <section style="background-color: #eee;">
-    <div class="text-center container py-5">
+    <div class="text-center container py-1">
         <h1 class="mt-4 mb-5"><strong>Add New Car</strong></h1>
         <form method="POST" action="{{ route('seller.store') }}" enctype="multipart/form-data">
             @csrf
@@ -63,10 +65,11 @@
             <div>
                 <button style= "font-size: 20px;" type="submit" class="btn btn-primary">Add Car</button>
             </div>
+            <a href="{{ url()->previous() }}" class="btn btn-default">Go Back</a>
         </form>
     </div>
 </section>
-
+@include('components.footer')
 <style>
     div {
         font-size:20px;
