@@ -23,7 +23,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     // return view('welcome');
-    return redirect('car');
+    return redirect('home');
 });
 Route::get('/home', [HomeController::class, 'index']);
 // Get user info using user id
