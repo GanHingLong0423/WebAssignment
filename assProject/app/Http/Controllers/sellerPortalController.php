@@ -14,10 +14,10 @@ class SellerPortalController extends Controller
     public function showListings()
     {
         if (auth()->user()->isAdmin()){
-            $cars = Car::all();
+            $cars = Car::paginate(8);
         } else{
         $user_id = auth()->user()->id;
-        $cars = Car::where('user_id',$user_id)->get();
+        $cars = Car::where('user_id',$user_id)->paginate(8);
         }
         return view('sellerPortal', ['cars' => $cars]);
     }

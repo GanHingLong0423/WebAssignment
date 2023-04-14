@@ -74,6 +74,10 @@
         
         <br>
 
+        <div class="d-flex justify-content-center">
+            {{ $cars->links() }}
+        </div>
+
     </div>
 </section>
 @include('components.footer')
