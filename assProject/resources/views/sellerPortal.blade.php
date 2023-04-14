@@ -100,4 +100,8 @@
         border: 1px solid black;
         padding: 10px;
     }
+
+    .w-5 {
+        display: none
+    }
 </style>
