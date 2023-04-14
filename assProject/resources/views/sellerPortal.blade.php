@@ -11,16 +11,18 @@
     <div class="text-center container py-5">
         <h1 class="mt-4 mb-5">
             <strong>
-            @if(Auth::user()->role == 'admin')
+                @if(Auth::user()->role == 'admin')
                 Admin Portal
-            @else
+                @else
                 Seller Portal
-            @endif
+                @endif
             </strong>
         </h1>
+        @if(Auth::user()->role=='seller')
         <div>
             <a href="{{ route('seller.create') }}" style="font-size: 20px;" class="btn btn-success">Add Listing</a>
         </div>
+        @endif
         <a href="{{ url("profile/".Auth::user()->id) }}" class="btn btn-default">Go Back</a>
         <br>
         <table>
@@ -65,13 +67,13 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" style="width: 100px;">Delete</button>
                         </form>
-                        
+
                     </td>
                 </tr>
             </tbody>
             @endforeach
         </table>
-        
+
         <br>
 
     </div>

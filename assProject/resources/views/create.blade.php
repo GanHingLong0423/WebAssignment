@@ -35,7 +35,7 @@
             </div>
             <div>
                 <label for="plateNumber">Plate Number:</label>
-                <input type="text" name="plateNumber" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" 
+                <input type="text" name="plateNumber" 
                 required>
             </div>
             <div>

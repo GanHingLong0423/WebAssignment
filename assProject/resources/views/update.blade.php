@@ -36,7 +36,7 @@
             </div>
             <div>
                 <label for="plateNumber">Plate Number:</label>
-                <input type="text" name="plateNumber" value="{{ old('plateNumber', $car->plateNumber) }}" required pattern="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
+                <input type="text" name="plateNumber" value="{{ old('plateNumber', $car->plateNumber) }}" required >
             </div>
             <div>
                 <label for="yearOfManufacture">Year of Manufacture:</label>
