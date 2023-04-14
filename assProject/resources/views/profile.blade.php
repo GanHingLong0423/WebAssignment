@@ -48,12 +48,12 @@
           @endcan
           @can('isAdmin')
             <a href='{{"/seller/dashboard"}}'>
-              <button type="button" class="btn btn-info" style="width: 150px;">Admin Portal</button>
+              <button type="button" class="btn btn-info" style="width: 150px;" >Admin Portal</button>
             </a>
           @endcan
           @can('isUser')
             <a href="{{url('changeRole',['id' => $user['id']])}}">
-              <button type="button" class="btn btn-info" style="width: 150px;">Register as Seller</button>
+              <button type="button" class="btn btn-info" onclick="refreshPage()" style="width: 150px;">Register as Seller</button>
             </a>
           @endcan
         </div>
@@ -62,6 +62,12 @@
   </div>
 </div>
 @include('components.footer')
+<script>
+function refreshPage() {
+    location.reload(); // This reloads the current page
+}
+</script>
+
 
 <style>
   body {

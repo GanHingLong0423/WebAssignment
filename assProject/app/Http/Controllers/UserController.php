@@ -18,6 +18,7 @@ class UserController extends Controller
         $user=User::find($id);
         $user->role = 'seller';
         $user->save();
-        return view('profile',['user'=>$user]);
+        //return view('profile',['user'=>$user]);
+        return redirect('profile/'.$user['id']);
     }
 }
