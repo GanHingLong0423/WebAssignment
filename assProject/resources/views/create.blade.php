@@ -35,7 +35,8 @@
             </div>
             <div>
                 <label for="plateNumber">Plate Number:</label>
-                <input type="text" name="plateNumber" required>
+                <input type="text" name="plateNumber" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$" 
+                required>
             </div>
             <div>
                 <label for="yearOfManufacture">Year of Manufacture:</label>
@@ -61,6 +62,7 @@
                 <label for="image">Image:</label>
                 <input type="file" name="image" required>
             </div>
+            <div><small>Image must be in .jpg, .jpeg, .png format and less than 2MB</small></div>
             <br>
             <div>
                 <button style= "font-size: 20px;" type="submit" class="btn btn-primary">Add Car</button>

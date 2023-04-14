@@ -36,7 +36,7 @@
             </div>
             <div>
                 <label for="plateNumber">Plate Number:</label>
-                <input type="text" name="plateNumber" value="{{ $car->plateNumber }}">
+                <input type="text" name="plateNumber" value="{{ old('plateNumber', $car->plateNumber) }}" required pattern="^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$">
             </div>
             <div>
                 <label for="yearOfManufacture">Year of Manufacture:</label>
@@ -60,8 +60,9 @@
             </div>
             <div>
                 <label for="image">Image:</label>
-                <input type="file" name="image" value="{{ old('image') }}" required>
+                <input type="file" name="image" value="{{ old('image') }}" >
             </div>
+            <div><small>IGNORE if you don't want to replace the existing image.</small></div>
             <br>
             <div>
                 <button style= "font-size: 20px;" type="submit" class="btn btn-primary">Update</button>
