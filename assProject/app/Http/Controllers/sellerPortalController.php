@@ -13,9 +13,12 @@ class SellerPortalController extends Controller
 {
     public function showListings()
     {
+        if (auth()->user()->isAdmin()){
+            $cars = Car::all();
+        } else{
         $user_id = auth()->user()->id;
         $cars = Car::where('user_id',$user_id)->get();
-
+        }
         return view('sellerPortal', ['cars' => $cars]);
     }
 
@@ -92,7 +95,7 @@ public function update(Request $request, $id)
     $car->price = $request->input('price');
     $car->condition = $request->input('condition');
 
-    if ($request->has('image')) {
+    if ($request->hasFile('image')) {
         // Delete old image file
         Storage::delete($car->filename);
         // Store new image file
@@ -107,5 +110,6 @@ public function update(Request $request, $id)
 
     return redirect()->route('seller.dashboard')->with('success', 'Car listing updated successfully.');
 }
+
 
 }

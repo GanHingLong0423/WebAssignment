@@ -9,7 +9,15 @@
 </section>
 <section style="background-color: #eee;">
     <div class="text-center container py-5">
-        <h1 class="mt-4 mb-5"><strong>Seller Portal</strong></h1>
+        <h1 class="mt-4 mb-5">
+            <strong>
+            @if(Auth::user()->role == 'admin')
+                Admin Portal
+            @else
+                Seller Portal
+            @endif
+            </strong>
+        </h1>
         <div>
             <a href="{{ route('seller.create') }}" style="font-size: 20px;" class="btn btn-success">Add Listing</a>
         </div>
@@ -35,7 +43,7 @@
             @foreach($cars as $car)
             <tbody>
                 <tr>
-                    <td><img src="{{ asset($car->file_path) }}" alt="{{ $car->filename }}" width=100 height=100></td>
+                    <td><img src="{{ asset($car->file_path) }}" alt="{{ $car->filename }}" width=250 height=200></td>
                     <td>{{ $car->brand }}</td>
                     <td>{{ $car->model }}</td>
                     <td>{{ $car->variant }}</td>
@@ -46,10 +54,12 @@
                     <td>{{ $car->price }}</td>
                     <td>{{ $car->condition }}</td>
                     <td>
+                        @if(Auth::user()->role !="admin")
                         <form action="{{ route('seller.edit', $car->id) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-primary" style="width: 100px;">Edit</button>
                         </form>
+                        @endif
                         <form action="{{ route('seller.destroy', $car->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
